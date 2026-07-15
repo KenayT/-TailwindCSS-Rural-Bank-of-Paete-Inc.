@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rural Bank of Paete, Inc.</title>
+  
+  <!-- Favicon (Browser Tab Icon) -->
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  
+  <!-- Tailwind CSS Output -->
+  <link href="./src/output.css" rel="stylesheet">
+  
+  <!-- Professional Web Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    
+    /* Hide scrollbar for the card slider but keep functionality */
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 antialiased overflow-x-hidden">
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="w-full bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-500">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo & Bank Name -->
+        <a href="#" class="flex items-center gap-3 group">
+          <img src="assets/logo.png" alt="Rural Bank of Paete Logo" class="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
+          <span class="font-bold text-blue-900 dark:text-blue-400 text-lg leading-tight hidden sm:block transition-colors duration-300">
+            Rural Bank<br />of Paete, Inc.
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex space-x-6 xl:space-x-8 font-medium text-sm xl:text-base text-gray-600 dark:text-gray-300">
+          <a href="#" class="text-blue-600 dark:text-yellow-400 border-b-2 border-blue-600 dark:border-yellow-400 pb-1">Home</a>
+          <a href="about.html" class="hover:text-blue-600 dark:hover:text-yellow-400 transition-colors duration-300">About Us</a>
+          <a href="products.html" class="hover:text-blue-600 dark:hover:text-yellow-400 transition-colors duration-300">Products & Services</a>
+          <a href="news.html" class="hover:text-blue-600 dark:hover:text-yellow-400 transition-colors duration-300">News & Updates</a>
+          <a href="#" class="hover:text-blue-600 dark:hover:text-yellow-400 transition-colors duration-300">Contact Us</a>
+        </nav>
+
+        <!-- Right Side: Dark Mode Toggle, Search, Login, Mobile Menu -->
+        <div class="flex items-center space-x-3 sm:space-x-4">
+          
+          <!-- Light/Dark Mode Switch -->
+          <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-yellow-400 rounded-lg text-sm p-2.5 transition-colors duration-300">
+            <!-- Dark Mode Icon (Moon) -->
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <!-- Light Mode Icon (Sun) -->
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+
+          <!-- Search Icon -->
+          <button class="hidden md:block text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-yellow-400 transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          </button>
+
+          <!-- Login Button -->
+          <a href="#" class="hidden md:block bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold py-2 px-5 rounded-md shadow-sm transition-all duration-300 transform hover:-translate-y-1">
+            Log In
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button class="lg:hidden text-blue-900 dark:text-gray-200 focus:outline-none transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <!-- Re-integrated background image with dynamic light/dark blending overlays -->
+  <section class="relative w-full pt-16 pb-48 lg:pt-24 lg:pb-56 overflow-hidden bg-cover bg-center bg-no-repeat transition-colors duration-500" style="background-image: url('assets/landing page bg section 1.jpg');">
+    
+    <!-- Dynamic Gradient Overlay: Allows image to peek through but darkens smoothly in dark mode -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/85 via-blue-700/80 to-blue-800/70 dark:from-blue-950/95 dark:via-gray-900/90 dark:to-gray-900/80 transition-colors duration-500"></div>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between">
+      
+      <!-- Hero Text Content -->
+      <div class="w-full lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Welcome to <br />
+          <span class="text-yellow-400 dark:text-yellow-500">Rural Bank of Paete Inc.</span>
+        </h1>
+        <p class="text-blue-50 dark:text-gray-300 text-lg sm:text-base xl:text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
+          Serving our community with trust, care, and financial empowerment since 1966. We offer secure and accessible banking services tailored to the needs of individuals, families, farmers, and small businesses in Paete and beyond.
+        </p>
+        
+        <div class="inline-block bg-yellow-400 dark:bg-yellow-500 text-blue-900 dark:text-gray-900 font-bold text-lg py-2 px-6 rounded-full mb-8 shadow-lg">
+          NOW, SAVE, GROW WITH US!
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#" class="bg-white dark:bg-blue-600 text-blue-900 dark:text-white font-bold py-3 px-8 rounded-md shadow-lg hover:bg-gray-100 transition-all">
+            Open an Account Now!
+          </a>
+          <a href="#" class="border-2 border-white text-white font-bold py-3 px-8 rounded-md hover:bg-white hover:text-blue-900 dark:hover:bg-gray-100 dark:hover:text-gray-900 transition-all">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Vector Art - Properly sized and grounded -->
+      <div class="w-full lg:w-1/2 flex justify-center lg:justify-end items-end relative">
+        <img src="assets/vector art section 1.png" alt="Banking Illustration" class="w-11/12 sm:w-3/4 lg:w-[90%] max-w-2xl drop-shadow-2xl translate-y-12 lg:translate-y-16 origin-bottom" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INFINITE CAROUSEL SECTION ================= -->
+  <section class="relative w-full z-20 -mt-32 sm:-mt-40 mb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center">
+      
+      <!-- Left Arrow -->
+      <button id="slide-left" class="absolute left-2 sm:left-4 z-30 bg-cyan-400 hover:bg-cyan-500 text-white p-2 rounded-md shadow-md transition-transform hover:scale-105 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+
+      <!-- Slider Container -->
+      <div id="card-slider" class="flex gap-6 overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing pb-8 pt-4 px-12 w-full">
+        
+        <!-- Card 1 -->
+        <div class="card-item min-w-[280px] sm:min-w-[300px] flex-shrink-0 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center select-none transition-colors duration-500">
+          <img src="assets/icon1.png" alt="Regular Savings" class="h-20 w-20 mb-4 object-contain pointer-events-none" />
+          <h3 class="text-xl font-bold text-blue-900 dark:text-blue-200 mb-2">Regular Savings</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow">A deposit account that earns interest and allows you to...</p>
+          <a href="#" class="bg-blue-800 dark:bg-blue-700 hover:bg-blue-900 dark:hover:bg-blue-600 text-white px-8 py-2.5 rounded-full text-sm font-semibold transition-colors w-full">Learn more...</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-item min-w-[280px] sm:min-w-[300px] flex-shrink-0 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center select-none transition-colors duration-500">
+          <img src="assets/icon2.png" alt="Basic Deposit Account" class="h-20 w-20 mb-4 object-contain pointer-events-none" />
+          <h3 class="text-xl font-bold text-blue-900 dark:text-blue-200 mb-2">Basic Deposit Account</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow">A simplified savings account designed for the unbanked...</p>
+          <a href="#" class="bg-blue-800 dark:bg-blue-700 hover:bg-blue-900 dark:hover:bg-blue-600 text-white px-8 py-2.5 rounded-full text-sm font-semibold transition-colors w-full">Learn more...</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-item min-w-[280px] sm:min-w-[300px] flex-shrink-0 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center select-none transition-colors duration-500">
+          <img src="assets/icon3.png" alt="Time Deposit Account" class="h-20 w-20 mb-4 object-contain pointer-events-none" />
+          <h3 class="text-xl font-bold text-blue-900 dark:text-blue-200 mb-2">Time Deposit Account</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow">A deposit account where funds are locked in for...</p>
+          <a href="#" class="bg-blue-800 dark:bg-blue-700 hover:bg-blue-900 dark:hover:bg-blue-600 text-white px-8 py-2.5 rounded-full text-sm font-semibold transition-colors w-full">Learn more...</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-item min-w-[280px] sm:min-w-[300px] flex-shrink-0 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center select-none transition-colors duration-500">
+          <img src="assets/icon4.png" alt="Checking Account" class="h-20 w-20 mb-4 object-contain pointer-events-none" />
+          <h3 class="text-xl font-bold text-blue-900 dark:text-blue-200 mb-2">Checking Account</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow">A deposit account that allows the account holder to issue...</p>
+          <a href="#" class="bg-blue-800 dark:bg-blue-700 hover:bg-blue-900 dark:hover:bg-blue-600 text-white px-8 py-2.5 rounded-full text-sm font-semibold transition-colors w-full">Learn more...</a>
+        </div>
+
+      </div>
+
+      <!-- Right Arrow -->
+      <button id="slide-right" class="absolute right-2 sm:right-4 z-30 bg-cyan-400 hover:bg-cyan-500 text-white p-2 rounded-md shadow-md transition-transform hover:scale-105 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" /></svg>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ================= WHAT WE OFFER SECTION ================= -->
+  <section id="what-we-offer" class="relative w-full py-16 lg:py-24 bg-sky-500 dark:bg-blue-950 transition-colors duration-500 overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        
+        <div class="w-full lg:w-1/2 text-white z-10">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">What We Offer?</h2>
+          <p class="mb-8 text-sky-50 dark:text-gray-300 text-lg">
+            Discover our range of financial services designed to help you save, grow, and manage your money with trust and convenience.
+          </p>
+
+          <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 shadow-2xl text-gray-800 dark:text-gray-200 transform hover:scale-[1.02] transition-transform duration-300">
+            <div class="inline-block border-2 border-blue-900 dark:border-yellow-400 rounded-full px-5 py-1.5 mb-6">
+              <h3 class="text-xl font-bold text-blue-900 dark:text-yellow-400">Products we offer:</h3>
+            </div>
+
+            <h4 class="font-bold text-lg mb-3 text-blue-800 dark:text-blue-300">Loans</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 mb-6 text-sm sm:text-base">
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Agricultural Loan</li>
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Industrial Loan</li>
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Commercial Loan</li>
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Medical Loan</li>
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Housing Loan</li>
+              </ul>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Salary Loan</li>
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> O.F.W. Loan</li>
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Pension Loan / SSS / GSIS</li>
+                <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Other Government Supervised Loan</li>
+              </ul>
+            </div>
+
+            <h4 class="font-bold text-lg mb-3 text-blue-800 dark:text-blue-300">Deposit</h4>
+            <ul class="space-y-2 text-sm sm:text-base">
+              <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Savings Account Deposit</li>
+              <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&bull;</span> Time Deposit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 flex justify-center z-10">
+          <img src="assets/vector art 2 section 2.png" alt="Financial Services Illustration" class="w-full max-w-lg lg:max-w-xl object-contain drop-shadow-2xl" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INFO BOXES SECTION ================= -->
+  <section class="py-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-sky-500 dark:bg-blue-800 rounded-xl p-6 sm:p-8 text-white shadow-lg hover:-translate-y-2 transition-transform duration-300">
+          <h3 class="text-xl font-bold mb-4">Members</h3>
+          <ul class="space-y-2 text-sm sm:text-base text-sky-50 dark:text-blue-100">
+            <li>&bull; Philippine Deposit Insurance Corporation</li>
+            <li>&bull; Rural Bankers Association of the Philippines</li>
+            <li>&bull; Confederation of Southern Tagalog Rural Bank</li>
+          </ul>
+        </div>
+
+        <div class="bg-sky-500 dark:bg-blue-800 rounded-xl p-6 sm:p-8 text-white shadow-lg hover:-translate-y-2 transition-transform duration-300">
+          <h3 class="text-xl font-bold mb-4">Services We Offer</h3>
+          <ul class="space-y-2 text-sm sm:text-base text-sky-50 dark:text-blue-100">
+            <li>&bull; Bancnet - POS (Point of Sale)</li>
+            <li>&bull; Cash Out</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-900 dark:bg-blue-950 rounded-xl p-6 sm:p-8 text-white shadow-lg hover:-translate-y-2 transition-transform duration-300 flex items-center justify-center text-center cursor-pointer group">
+          <h3 class="text-2xl font-bold group-hover:text-yellow-400 transition-colors duration-300">
+            Let us know what you want...
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-blue-900 dark:bg-black text-white pt-12 pb-6 transition-colors duration-500">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-blue-800 dark:border-gray-800 pb-8 mb-6">
+        
+        <div class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Footer Logo" class="h-10 w-10 brightness-0 invert" />
+          <span class="font-bold text-lg">Rural Bank of Paete, Inc.</span>
+        </div>
+
+        <nav class="flex flex-wrap justify-center gap-6 text-sm font-medium text-blue-200 dark:text-gray-400">
+          <a href="#" class="hover:text-white transition-colors duration-200">Home</a>
+          <a href="about.html" class="hover:text-white transition-colors duration-200">About Us</a>
+          <a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors duration-200">Terms of Service</a>
+        </nav>
+      </div>
+      
+      <div class="text-center text-sm text-blue-300 dark:text-gray-500">
+        &copy; 2026 Rural Bank of Paete, Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* --- 1. LIGHT / DARK MODE TOGGLE LOGIC --- */
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeToggleLightIcon.classList.remove('hidden');
+    } else {
+        document.documentElement.classList.remove('dark');
+        themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        }
+    });
+
+    /* --- 2. INFINITE CAROUSEL AUTO-SCROLL, DRAG & ARROW LOGIC --- */
+    const slider = document.getElementById('card-slider');
+    const leftArrow = document.getElementById('slide-left');
+    const rightArrow = document.getElementById('slide-right');
+
+    // Clone the 4 original cards to create the infinite loop effect
+    const originalCards = Array.from(slider.children);
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      slider.appendChild(clone);
+    });
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let isAutoScrolling = true;
+    let autoScrollTimeout;
+
+    // The Infinite Auto-Scroll Engine
+    function autoScroll() {
+      if (isAutoScrolling && !isDown) {
+        slider.scrollLeft += 1; // Speed of the auto-scroll
+        
+        // When we scroll past the first set of 4 cards, silently jump back to 0
+        if (slider.scrollLeft >= slider.scrollWidth / 2) {
+            slider.scrollLeft = 0; 
+        } else if (slider.scrollLeft <= 0) {
+            // Failsafe for dragging too far left
+            slider.scrollLeft = slider.scrollWidth / 2;
+        }
+      }
+      requestAnimationFrame(autoScroll);
+    }
+    requestAnimationFrame(autoScroll);
+
+    // Helpers to pause/resume auto-scroll smoothly on interaction
+    const pauseScroll = () => { 
+        isAutoScrolling = false; 
+        clearTimeout(autoScrollTimeout);
+    };
+    const resumeScroll = () => { 
+        autoScrollTimeout = setTimeout(() => { isAutoScrolling = true; }, 1500); 
+    };
+
+    // Pause on hover or touch
+    slider.addEventListener('mouseenter', pauseScroll);
+    slider.addEventListener('mouseleave', resumeScroll);
+    slider.addEventListener('touchstart', pauseScroll);
+    slider.addEventListener('touchend', resumeScroll);
+
+    // Arrow Clicking (Calculates exact width to snap to the next card)
+    leftArrow.addEventListener('click', () => {
+      pauseScroll();
+      const cardWidth = slider.firstElementChild.offsetWidth + 24; // Card width + gap
+      
+      // If at the start, jump to the cloned half before sliding left
+      if (slider.scrollLeft === 0) {
+          slider.scrollLeft = slider.scrollWidth / 2;
+      }
+      slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      resumeScroll();
+    });
+    
+    rightArrow.addEventListener('click', () => {
+      pauseScroll();
+      const cardWidth = slider.firstElementChild.offsetWidth + 24;
+
+      // If at the end of original set, jump to 0 before sliding right
+      if (slider.scrollLeft >= slider.scrollWidth / 2) {
+          slider.scrollLeft = 0;
+      }
+      slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      resumeScroll();
+    });
+
+    // Mouse Dragging Logic
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      pauseScroll();
+      slider.classList.add('active:cursor-grabbing');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active:cursor-grabbing');
+      resumeScroll();
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      if (isDown) {
+        isDown = false;
+        slider.classList.remove('active:cursor-grabbing');
+        resumeScroll();
+      }
+    });
+    
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; // Drag sensitivity
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+</body>
+</html>
